@@ -36,7 +36,7 @@ const EmailSection = () => {
   };
   return (
     <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative">
-      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
+      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-1">
         <h5 className="text-xl font-bold text-white my-2">Let's Connect</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">I'm currently looking for new opportunities. If you have any questions or would like to work together, feel free to reach out.</p>
@@ -69,7 +69,7 @@ const EmailSection = () => {
             </label>
             <textarea id="message" name="message" required placeholder="Hi, I'm interested in your work" className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5" />
           </div>
-          <button type="submit" className="text-white bg-purple-500 hover:bg-purple-600 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+          <button type="submit" className="text-white bg-primary-500 hover:bg-primary-600 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
             Send Message
           </button>
           {
