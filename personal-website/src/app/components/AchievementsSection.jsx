@@ -1,21 +1,33 @@
+"use client";
 import React from "react";
+import dynamic from "next/dynamic";
+
+const AnimatedNumbers = dynamic(
+  () => {
+    return import("react-animated-numbers");
+  },
+  { ssr: false }
+);
 
 const achievementsList = [
   {
     metric: "Projects",
-    value: "100+",
+    value: "100",
+    postfix: "+",
   },
   {
     metric: "Github Stars",
-    value: "100+",
+    value: "99",
+    postfix: "+",
   },
   {
+    prefix: "",
     metric: "Users",
-    value: "100+",
+    value: "10000",
   },
   {
     metric: "Years",
-    value: "1+",
+    value: "1",
   },
 ];
 
@@ -26,8 +38,24 @@ const AchievementsSection = () => {
         {achievementsList.map((achievement, index) => {
           return (
             <div key={index} className="flex flex-col justify-center items-center mx-4">
-              <h2 className="text-white font-bold text-4xl">{achievement.metric}</h2>
-              <p className="text-[#ADB7BE] text-base">{achievement.value}</p>
+              <h2 className="text-white font-bold text-4xl flex flex-row">
+                {achievement.prefix}
+                <AnimatedNumbers
+                  includeComma
+                  animateToNumber={parseInt(achievement.value)}
+                  locale="en-US"
+                  className="text-white text-4xl font-bold"
+                  configs={(_, index) => {
+                    return {
+                      mass: 1,
+                      friction: 100,
+                      tension: 140 * (index + 1),
+                    };
+                  }}
+                />
+                {achievement.postfix}
+              </h2>
+              <p className="text-[#ADB7BE] text-base">{achievement.metric}</p>
             </div>
           );
         })}
